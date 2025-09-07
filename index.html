@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> S2 WORLD- O SITE DO AMOR </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Slab:wght@400;700&display=swap');
+
+    :root {
+        --primary: #0a0a0a;
+        --secondary: #ff007f;
+        --accent: #00e0ff;
+        --light: #1a1a1a;
+        --highlight: #ffdd57;
+        --text: #f0f0f0;
+        --bg-card: #222;
+    }
+
+    body {
+        font-family: 'Roboto Slab', serif;
+        background-color: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+        background-image: linear-gradient(to bottom, #1a1a1a, #000000);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: 'Orbitron', sans-serif;
+        letter-spacing: 1px;
+        color: var(--highlight);
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        background: var(--secondary);
+        color: white;
+        padding: 12px 25px;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 0, 127, 0.5);
+    }
+
+    .btn:hover {
+        background-color: var(--accent);
+        color: var(--primary);
+        transform: scale(1.05);
+    }
+
+    /* header */
+    header {
+        background-color: #000;
+        color: white;
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px var(--secondary);
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo h1 {
+        font-size: 2rem;
+        margin-left: 10px;
+        color: var(--accent);
+    }
+
+    .logo span {
+        color: var(--secondary);
+    }
+
+    .logo i {
+        font-size: 2rem;
+        color: var(--secondary);
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
+
+    nav ul li {
+        margin-left: 25px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    nav ul li a:hover {
+        color: var(--highlight);
+        transform: scale(1.05);
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--highlight);
+        transition: width 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    /* extra animação */
+    section {
+        animation: fadeIn 0.8s ease-in;
+    }
+
+    .mobile-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* hero section */
+    .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url('principa.jpeg') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        padding-top: 70px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .hero h2 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        color: #ff66cc;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        animation: fadeUp 1s ease forwards;
+    }
+
+    /* animação suave de subida */
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*sobre*/
+
+    .about {
+        padding: 100px;
+        background-color: #1a1a1a;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .section-title h2 {
+        font-size: 2.5rem;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    .section-title h2::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background: var(--secondary);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ===== SOBRE ===== */
+    .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+        padding: 100px 50px;
+        background: linear-gradient(135deg, #0a0f1f, #141a2e);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 224, 255, 0.2);
+        position: relative;
+    }
+
+    .about-text {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .about-text h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #00e0ff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .about-text p {
+        margin-bottom: 15px;
+        line-height: 1.7;
+        color: #d1d1d1;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    .about-image {
+        flex: 1;
+        min-width: 300px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 25px rgba(0, 224, 255, 0.3);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    .about-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 35px rgba(0, 224, 255, 0.5);
+    }
+
+    /* ===== SERVIÇOS ===== */
+    .services {
+        padding: 120px 50px;
+        background: linear-gradient(180deg, #080c18, #111726);
+        color: #f0f0f0;
+        text-align: center;
+    }
+
+    .services h2 {
+        font-size: 3rem;
+        margin-bottom: 60px;
+        color: #00e0ff;
+        background: linear-gradient(90deg, #00e0ff, #ff007f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Orbitron', sans-serif;
+        letter-spacing: 2px;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .service-item {
+        background-color: #1a1a1a;
+        border-radius: 15px;
+        padding: 30px 20px;
+        box-shadow: 0 5px 20px rgba(0, 224, 255, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+    }
+
+    .service-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
+    }
+
+    .service-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #00e0ff;
+        font-family: 'Orbitron', sans-serif;
+        letter-spacing: 1px;
+    }
+
+    .service-item p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #d1d1d1;
+    }
+
+    /* ===== GALERIA ===== */
+    .gallery {
+        padding: 100px 0;
+        background-color: #111726;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 5px 25px rgba(0, 224, 255, 0.2);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        height: 180px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        display: block;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 35px rgba(0, 224, 255, 0.5);
+    }
+
+    .gallery-item::after {
+        display: none;
+    }
+
+    /* ===== CONTATO ===== */
+    .contact {
+        padding: 120px 50px;
+        background: linear-gradient(135deg, #080c18, #141a2e);
+        color: #f0f0f0;
+    }
+
+    .contact-container {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .contact-info,
+    .contact-form {
+        flex: 1;
+        min-width: 300px;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 15px 50px rgba(0, 224, 255, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-info {
+        background: #111726;
+    }
+
+    .contact-form {
+        background: #0a0f1f;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #00e0ff;
+        font-family: 'Orbitron', sans-serif;
+        letter-spacing: 1px;
+        position: relative;
+    }
+
+    .contact-info h3::after,
+    .contact-form h3::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: #ff007f;
+    }
+
+    .contact-item {
+        display: flex;
+        margin-bottom: 25px;
+    }
+
+    .contact-icon {
+        font-size: 1.5rem;
+        color: #ff007f;
+        margin-right: 15px;
+        min-width: 30px;
+    }
+
+    .contact-text h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        color: #f0f0f0;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-bottom-color: #00e0ff;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .form-group textarea {
+        height: 140px;
+        resize: none;
+    }
+
+    ::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 1024px) {
+        .hero h2 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .about,
+        .services,
+        .gallery,
+        .contact {
+            padding: 60px 20px;
+        }
+
+        .gallery-grid {
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            text-align: center;
+            padding: 100px 20px 50px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+
+        .gallery-grid {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .contact-form form {
+            padding: 0 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            font-size: 0.9rem;
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 1.3rem;
+        }
+
+        nav ul li {
+            margin: 8px 0;
+        }
+
+        .hero h2 {
+            font-size: 1.6rem;
+        }
+
+        .hero p {
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            font-size: 0.8rem;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .gallery-item {
+            height: auto;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            font-size: 0.85rem;
+        }
+    }
+
+    /* cards */
+    .services-card,
+    .service-card {
+        background-color: var(--bg-card);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 20px rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .services-card:hover,
+    .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
+    }
+
+    .services-icon i,
+    .service-icon i {
+        font-size: 2rem;
+        color: var(--accent);
+        margin-bottom: 10px;
+    }
+
+    /* animação suave para o Home */
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero h2,
+    .hero p {
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+    }
+
+    .hero h2 {
+        animation-delay: 0.3s;
+    }
+
+    .hero p {
+        animation-delay: 0.6s;
+    }
+</style>
+
+</head>
+
+<body>
+    
+    <!-- header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-rainbow"></i>
+                <h1>s2<span> world</span></h1>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#about">sobre</a></li>
+                    <li><a href="#services">serviços</a></li>
+                    <li><a href="#contact">contato</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <h2>s2 world lista</h2>
+            <p>No s2 world, indicamos os melhores manhwas, mangás, yaoi, BL, GL, BG e animações que você precisa conhecer</p>
+            <a href="#contact" class="btn">telegram</a>
+        </div>
+    </section>
+
+    <!-- sobre -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>SOBRE</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Descubra novas histórias todos os dias</h3>
+                    <p>Desde 2025, o s2world tem como missão reunir e recomendar as melhores obras de manhwa, mangás e
+                        animações para fãs de histórias intensas e emocionantes.</p>
+                    <p>Nosso foco é o universo BL, GL, Yaoi e histórias alternativas que fogem do convencional.</p>
+                    <p>Seja você iniciante ou veterano, aqui é o lugar perfeito para encontrar algo novo para maratonar.
+                    </p>
+                    <a href="#services" class="btn">Ver Gêneros</a>
+                </div>
+                <div class="about-img">
+                    <img src="img bls 1.jpg" alt="capas de casais " />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gêneros & Categorias</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="services-card">
+                    <div class="services-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+
+                    <h3>BL/Yaois</h3>
+                    <p>BOYS LOVE Obras com romances entre garotos (BL), cheias de emoção, intensidade e conexões
+                        profundas que cativam do início ao fim.</p>
+                    <div class="price">Mais</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+
+                    <h3>GL/Yuri</h3>
+                    <p>GIRLS LOVE Histórias protagonizadas por mulheres, com foco em romance entre garotas, descobertas
+                        e representatividade.</p>
+                    <div class="price">Mais</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rainbow"></i>
+                    </div>
+                    <h3>BG/Webtoons</h3>
+                    <p>BOYS, GIRLS LOVE Histórias protagonizadas por homens e mulheres, com foco em romance,
+                        descobertas e muito mais.</p>
+                    <div class="price">Mais</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3>Novels</h3>
+                    <p>Versões originais em formato literário dos manhwas e webtoons, trazendo histórias completas.</p>
+                    <div class="price">Mais</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Animação</h3>
+                    <p>Obras animadas que dão vida às histórias por meio de movimento, cores e trilhas sonoras.</p>
+                    <div class="price">Mais</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>TOP 10 s2 world</h3>
+                    <p>Confira as 10 obras mais populares do mês! — descubra o que está em alta agora!</p>
+                    <div class="price">Mais</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeria de Obras</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="pintor noturno.jpg" alt="capa de pintor noturno" />
+                </div>
+                <div class="gallery-item">
+                    <img src="lagrimas sobre flores murchas.jpg" alt="capa de lágrimas sobre flores murchas" />
+                </div>
+                <div class="gallery-item">
+                    <img src="gl 1.jpg" alt="capa, a protagonista está fumando" />
+                </div>
+                <div class="gallery-item">
+                    <img src="low tide.jpg" alt="capa, o casal está deitado na água" />
+                </div>
+                <div class="gallery-item">
+                    <img src="killing stalking.jpg" alt="capa, os dois estão no porão" />
+                </div>
+                <div class="gallery-item">
+                    <img src="doce pscose.jpg" alt="capa, casal principal" />
+                </div>
+                <div class="gallery-item">
+                    <img src="images (1).jpg" alt="foto de casal yaoi">
+                </div>
+                <div class="gallery-item">
+                    <img src="serena.jpg" alt="manhwa serena capa">
+                </div>
+                <div class="gallery-item">
+                    <img src="sadisk beauty yaoi.jpg" alt="manhwa yaoi capa">
+                </div>
+                <div class="gallery-item">
+                    <img src="repeat sign.jpg" alt="manhwa BG capa">
+                </div>
+<div class="gallery-item">
+                    <img src="capa boderline.webp" alt="manhwa yaoi capa">
+                </div>
+                <div class="gallery-item">
+                    <img src="images.jpg" alt="manhwa bg capa">
+                </div>
+                <div class="gallery-item">
+                    <img src="a noiva do gigante.jpg" alt="manhwa yaoi">
+                </div>
+<div class="gallery-item">
+                    <img src="download.jpg" alt="manhwa yuri capa capa">
+                </div>
+                <div class="gallery-item">
+                    <img src="sadisk beauty gl.jpg" alt="manhwa yuri capa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contato -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Fale Conosco</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-at"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Localização</h4>
+                            <p>Brasil <br /> Atendimento 100% online para fãs de todo o País</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>E-mail</h4>
+                            <p>s2worldindica@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telegram</h4>
+                            <p>(55) 55984584200</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Seg a Sáb: 10h às 22h<br />Domingo: 14h às 20h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Adicione sua recomendação</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="SEU NOME" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="SEU EMAIL" />
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="SEU TELEFONE" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="NOME DO(A) AUTOR(A)" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="GÊNERO DESEJADO OU TÍTULO" />
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="FALE UM POUCO SOBRE O QUE VC GOSTA." maxlength="500"></textarea>
+                        </div>
+                        <button type="submit" class="btn">ENVIAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-book-open"></i>
+                    <h1>S2 <span>WORLD</span></h1>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-telegram-plane"></i>Telegram</a>
+                    <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+                    <a href="#"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+                    <a href="#"><i class="fab fa-twitter"></i>X</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 S2 World. Todos os direitos reservados. | Conteúdo voltado para recomendações de manhwas,
+                mangás BL, GL, BG, Novels e animações.
+            </div>
+        </div>
+    </footer>
+    <script>
+  // MENU MOBILE
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menu = document.getElementById("menu");
+  mobileMenu.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    mobileMenu.classList.toggle("open");
+  });
+
+  // FECHAR MENU AO CLICAR NO LINK
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("active");
+      mobileMenu.classList.remove("open");
+    });
+  });
+
+  // ROLAGEM SUAVE
+  document.querySelectorAll("a[href^='#']").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 70,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+
+  // FORMULÁRIO INTERATIVO
+  const form = document.querySelector("form");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    // Feedback visual
+    form.querySelector("button").textContent = "Enviado!";
+    form.querySelector("button").disabled = true;
+    form.classList.add("submitted");
+
+    setTimeout(() => {
+      alert("Obrigado pela recomendação! 💖");
+      form.reset();
+      form.querySelector("button").textContent = "ENVIAR";
+      form.querySelector("button").disabled = false;
+      form.classList.remove("submitted");
+    }, 1500);
+  });
+
+  // ANIMAÇÃO AO ENTRAR NA TELA
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".service-card, .services-card, .gallery-item, .about-content").forEach(el => observer.observe(el));
+
+  // EFEITO DE HOVER DINÂMICO PARA CARDS
+  const cards = document.querySelectorAll(".service-card, .services-card");
+  cards.forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty("--mouse-x", x + "px");
+      card.style.setProperty("--mouse-y", y + "px");
+    });
+    // animação de fadeUp ao entrar na tela
+const heroElements = document.querySelectorAll('.hero h2, .hero p');
+
+const heroObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.animationPlayState = 'running';
+    }
+  });
+}, { threshold: 0.2 });
+
+heroElements.forEach(el => {
+  el.style.animationPlayState = 'paused';
+  heroObserver.observe(el);
+});
+
+  });
+</script>
+
+</html>
